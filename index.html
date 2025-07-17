@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Paint Widget</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="toolbar">
+    <button onclick="selectTool('pencil')">Pencil</button>
+    <button onclick="selectTool('brush')">Brush</button>
+    <button onclick="selectTool('eraser')">Eraser</button>
+    <button onclick="selectTool('airbrush')">Airbrush</button>
+    <button onclick="undo()">Undo</button>
+    <button onclick="selectTool('text')">Text</button>
+    <select id="brushSize" onchange="changeBrushSize(this.value)">
+      <option value="2">2</option>
+      <option value="5" selected>5</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+    </select>
+    <input type="color" id="colorPicker" value="#000000" onchange="changeColor(this.value)" />
+  </div>
+  <div id="canvas-container">
+    <canvas id="canvas" width="300" height="200"></canvas>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
