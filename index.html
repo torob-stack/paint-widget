@@ -1,29 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Paint Widget</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Compact Paint Widget</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="toolbar">
-    <button onclick="selectTool('pencil')">Pencil</button>
-    <button onclick="selectTool('brush')">Brush</button>
-    <button onclick="selectTool('eraser')">Eraser</button>
-    <button onclick="selectTool('airbrush')">Airbrush</button>
-    <button onclick="undo()">Undo</button>
-    <button onclick="selectTool('text')">Text</button>
-    <select id="brushSize" onchange="changeBrushSize(this.value)">
-      <option value="2">2</option>
-      <option value="5" selected>5</option>
-      <option value="10">10</option>
-      <option value="20">20</option>
-    </select>
-    <input type="color" id="colorPicker" value="#000000" onchange="changeColor(this.value)" />
-  </div>
-  <div id="canvas-container">
-    <canvas id="canvas" width="300" height="200"></canvas>
-  </div>
-  <script src="script.js"></script>
+<div class="window-frame">
+    <div class="window-header">
+        <span class="title">Paint</span>
+        <div class="window-buttons">
+            <span class="btn minimize">–</span>
+            <span class="btn close">×</span>
+        </div>
+    </div>
+    <div class="paint-container">
+        <div class="toolbox">
+            <button onclick="selectTool('pencil')" title="Pencil">✏️</button>
+            <button onclick="selectTool('brush')" title="Brush">🖌️</button>
+            <button onclick="selectTool('eraser')" title="Eraser">🩹</button>
+            <button onclick="selectTool('airbrush')" title="Airbrush">🌫️</button>
+            <button onclick="selectTool('text')" title="Text">🔤</button>
+            <button onclick="selectTool('line')" title="Line">📏</button>
+            <button onclick="selectTool('rect')" title="Rect">◻️</button>
+            <button onclick="selectTool('ellipse')" title="Ellipse">⚪</button>
+            <button onclick="undo()">↩️</button>
+            <button onclick="clearCanvas()">🧽</button>
+        </div>
+        <div class="canvas-section">
+            <div id="canvas-container"><canvas id="canvas" width="400" height="300"></canvas></div>
+            <div class="controls">
+                <label>Size:</label>
+                <input type="range" id="brushSize" min="1" max="30" value="5" oninput="syncBrushSize(this.value)">
+                <input type="color" id="colorPicker" value="#000000" onchange="changeColor(this.value)">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>

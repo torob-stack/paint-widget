@@ -1,14 +1,48 @@
+
 body {
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
+    font-family: sans-serif;
+    background: #fce4ec;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
-#toolbar {
-  margin: 10px;
+.window-frame {
+    border: 2px solid #333;
+    width: 480px;
+    background: #fff;
 }
-canvas {
-  border: 1px solid #000;
-  cursor: crosshair;
+.window-header {
+    display: flex;
+    justify-content: space-between;
+    background: #c0c0c0;
+    padding: 4px 8px;
+}
+.window-buttons {
+    display: flex;
+    gap: 4px;
+}
+.btn {
+    background: #888;
+    padding: 2px 6px;
+    border: 1px solid #333;
+    cursor: default;
+}
+.paint-container {
+    display: flex;
+}
+.toolbox {
+    display: flex;
+    flex-direction: column;
+    background: #d3d3d3;
+    padding: 4px;
+}
+.toolbox button {
+    margin: 2px 0;
+    font-size: 16px;
+}
+.canvas-section {
+    padding: 10px;
+}
+.controls {
+    margin-top: 8px;
 }
